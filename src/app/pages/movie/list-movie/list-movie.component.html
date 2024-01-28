@@ -1,0 +1,10 @@
+
+  <app-navbar></app-navbar>
+  <div class="container">
+    <div class="movies-grid">
+      <div *ngFor="let movie of movies" class="movie-card">
+        <img [src]="movie.posterURL" alt="{{ movie.title }}" (error)="handleImageError($event)" />
+        <h3>{{ movie.title }}</h3>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2 style="text-align: center;">Planes</h2>
+  <button class="btn btn-secondary btn-sm" (click)="createPlan()"
+  style="margin-bottom:10px;">Crear una nuevo Plan</button>
+  <div class="table-responsive">
+    <table class="table table-hover text-center table-sm">
+      <thead class="table-dark">
+        <tr>
+          <th>Plan</th>
+          <th>Número máximo de Perfiles</th>
+          <th>Descripción</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plan of plans">
+          <td>{{ plan.namePlan }}</td>
+          <td>{{ plan.numberMaxProfile }}</td>
+          <td>{{ plan.description }}</td>
+
+          <td>
+            <button (click)="editPlan(plan)" class="btn btn-warning btn-sm">Editar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

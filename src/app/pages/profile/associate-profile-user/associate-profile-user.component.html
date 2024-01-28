@@ -1,0 +1,22 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm()" class="text-center">
+  <div class="custom-form-field">
+    <label for="nameProfile"><b>Nombre del Perfil</b></label>
+    <input type="text" id="nameProfile" placeholder="Nombre" formControlName="nameProfile" name="nameProfile"
+      class="custom-input" required />
+  </div>
+
+  <!-- <div class="custom-form-field">
+    <label for="photoUrl"><b>Foto de Perfil</b></label>
+    <input type="text" id="photoUrl" formControlName="photoUrl" name="photoUrl"
+      class="custom-input" />
+  </div> -->
+  <br>
+  <div class="d-flex justify-content-between gap-2">
+    <button type="submit" class="btn btn-success btn-sm" [disabled]="myForm.invalid">
+      Guardar
+    </button>
+    <button type="button" (click)="closeModal()" class="btn btn-outline-danger btn-sm">
+      Cancelar
+    </button>
+  </div>
+</form>

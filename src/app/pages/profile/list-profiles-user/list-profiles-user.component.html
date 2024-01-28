@@ -1,0 +1,22 @@
+<div class="containter-fluid">
+  <app-navbar></app-navbar>
+  <button type="button" class="btn btn-success btn-sm" id="btn-asociar" (click)="openModal()">Asociar un perfil</button>
+  <main class="profiles">
+    <ul *ngFor="let profile of profilesUser">
+      <li (click)="viewPlansByProfile(profile)">
+        <img *ngIf="profile.photoUrl!=null && profile.photoUrl!=''"
+          src="{{profile.photoUrl}}"
+          alt="Profile Picture" />
+        <img *ngIf="profile.photoUrl==null || profile.photoUrl==''"
+          src="https://static.vecteezy.com/system/resources/previews/019/879/186/original/user-icon-on-transparent-background-free-png.png"
+          alt="Profile Picture" />
+        <div>
+          <strong>{{profile.nameProfile}}</strong>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary btn-sm">Editar Perfil</button>
+        </div>
+      </li>
+    </ul>
+  </main>
+</div>

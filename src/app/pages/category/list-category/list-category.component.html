@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2 style="text-align: center;">Categorias</h2>
+  <button class="btn btn-secondary btn-sm" (click)="createCategory()"
+  style="margin-bottom:10px;">Crear una nueva Categoria</button>
+  <div class="table-responsive">
+    <table class="table table-hover text-center table-sm">
+      <thead class="table-dark">
+        <tr>
+          <th>Categoria</th>
+          <th>Adecuado para menores de edad</th>
+          <th>Usuario creador</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories">
+          <td>{{ category.nameCategory }}</td>
+          <td >
+             <span *ngIf="category.isSuitableForAdults"> SI</span>
+             <span *ngIf="!category.isSuitableForAdults"> NO</span>
+            </td>
+          <td>{{ category.userCreate }}</td>
+          <td>
+            <button (click)="edit(category)" class="btn btn-warning btn-sm">Editar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

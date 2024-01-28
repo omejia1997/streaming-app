@@ -1,0 +1,31 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm()" class="text-center">
+  <div class="custom-form-field">
+    <label for="nameCategory"><b>Nombre de la Categoria</b></label>
+    <input type="text" id="nameCategory" placeholder="Categoria" formControlName="nameCategory" name="nameCategory"
+      class="custom-input"/>
+  </div>
+
+  <div class="custom-form-field">
+    <label for="isSuitableForAdults"><b>¿Esta categoria es adecuada para menores de edad?</b></label>
+    <select name="isSuitableForAdults" id="isSuitableForAdults" formControlName="isSuitableForAdults"
+      class="custom-input">
+      <option [ngValue]="item.value" *ngFor="let item of comboOptions"> {{ item.name }}</option>
+    </select>
+  </div>
+
+  <div class="custom-form-field">
+    <label for="urlEndpoint"><b>URL del Endpoint</b></label>
+    <input type="text" id="urlEndpoint" placeholder="URL del Endpoint" formControlName="urlEndpoint" name="urlEndpoint"
+      class="custom-input"/>
+  </div>
+
+  <br>
+  <div class="d-flex justify-content-between gap-2">
+    <button type="submit" class="btn btn-success btn-sm" [disabled]="myForm.invalid">
+      Guardar
+    </button>
+    <button type="button" (click)="closeModal()" class="btn btn-outline-danger btn-sm">
+      Cancelar
+    </button>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+<div class="containter-fluid">
+  <app-navbar></app-navbar>
+  <main class="profiles">
+    <ul *ngFor="let planCategory of planCategoryRS">
+      <li (click)="viewMovies(planCategory)">
+        <!-- <img *ngIf="profile.photoUrl==null || profile.photoUrl==''"
+          src="https://static.vecteezy.com/system/resources/previews/019/879/186/original/user-icon-on-transparent-background-free-png.png"
+          alt="Profile Picture" /> -->
+        <div>
+          <strong>{{planCategory.category?.nameCategory}}</strong>
+        </div>
+      </li>
+    </ul>
+  </main>
+</div>
